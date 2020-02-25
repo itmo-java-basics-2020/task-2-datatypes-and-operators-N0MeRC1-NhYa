@@ -11,7 +11,7 @@ public class Task2 {
      * - вывод 0.9
      */
     double getFractionalPart(double realNumber) {
-        return realNumber - (long)realNumber;
+        return realNumber % 1;
     }
 
     /**
@@ -25,7 +25,10 @@ public class Task2 {
      * Даны 2 целых числа. Проверьте равны ли они
      */
     boolean testIfIntsEqual(Integer a, Integer b) {
-            return (int)a == (int)b ;
+        if (a != null && b != null)
+            return a.intValue() == b.intValue();
+        else
+            return false;
     }
 
     /**
@@ -58,17 +61,18 @@ public class Task2 {
      * Даны 3 символа. Определите является ли хотя бы один из них цифрой 1..9
      */
     boolean atLeastOneIsDigit(char c1, char c2, char c3) {
-        if ((c1 - '0' >= 0 && c1 - '0' <= 9) || (c2 - '0' >= 0 && c2 - '0' <= 9) || (c3 - '0' >= 0 && c3 - '0' <= 9)){
-            return true;
-        }
-        return false;
+        Character ch1 = c1;
+        return ch1.isDigit(c1) || ch1.isDigit(c2) || ch1.isDigit(c3);
     }
 
     /**
      * Даны два вещественных числа. Определите равны ли они
      */
     boolean areRealNumbersEqual(double a, double b) {
-        return (float)a == (float)b;
+        if (StrictMath.abs(a - b) < 10e-15f)
+            return true;
+        else
+            return false;
     }
 
 
