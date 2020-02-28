@@ -61,8 +61,7 @@ public class Task2 {
      * Даны 3 символа. Определите является ли хотя бы один из них цифрой 1..9
      */
     boolean atLeastOneIsDigit(char c1, char c2, char c3) {
-        Character ch1 = c1;
-        return ch1.isDigit(c1) || ch1.isDigit(c2) || ch1.isDigit(c3);
+        return Character.isDigit(c1) || Character.isDigit(c2) || Character.isDigit(c3);
     }
 
     /**
